@@ -483,9 +483,9 @@ function DomeMark() {
       <path d="M40 42 L51 18 L62 42 Z" fill="#3F8466" opacity="0.38" />
       {/* Valley floor */}
       <line x1="0" y1="42" x2="64" y2="42" stroke="#3F8466" strokeWidth="1" opacity="0.25" />
-      {/* Dome — base at y=42, apex at y=9 */}
-      <path d="M32 9 C21 9 14 21 14 42 H50 C50 21 43 9 32 9 Z" fill="none" stroke="#1C2E27" strokeWidth="1.8" />
-      <path d="M32 9 V42 M14 42 H50 M18 18 H46 M15 28 H49 M15 36 H49 M32 9 C27 15 24 27 23 42 M32 9 C37 15 40 27 41 42" fill="none" stroke="#1C2E27" strokeWidth="1" opacity="0.45" />
+      {/* Dome — base at y=42, apex at y=22, half-circle proportions */}
+      <path d="M32 22 C23 22 18 31 18 42 H46 C46 31 41 22 32 22 Z" fill="none" stroke="#1C2E27" strokeWidth="1.8" />
+      <path d="M32 22 V42 M18 42 H46 M20 28 H44 M18 35 H46 M32 22 C28 26 26 33 25 42 M32 22 C36 26 38 33 39 42" fill="none" stroke="#1C2E27" strokeWidth="1" opacity="0.45" />
       <circle cx="32" cy="42" r="2" fill="#E2922F" />
     </svg>
   );
