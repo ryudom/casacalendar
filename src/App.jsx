@@ -75,7 +75,7 @@ export default function App() {
   const [filters, setFilters]       = useState({ dome: true, studio: true, cafe: true });
   const [selectedDay, setSelectedDay] = useState(null);
 
-  const [isAdmin, setIsAdmin]       = useState(false);
+  const [isAdmin, setIsAdmin]       = useState(() => localStorage.getItem("ca-admin") === "true");
   const [showPwd, setShowPwd]       = useState(false);
   const [editing, setEditing]       = useState(null);
   const [showSettings, setShowSettings] = useState(false);
@@ -185,7 +185,7 @@ export default function App() {
   };
   const goToday = () => { setYear(now.getFullYear()); setMonth(now.getMonth()); setSelectedDay(todayKey()); };
   const toggleFilter = (k) => setFilters(f => ({ ...f, [k]: !f[k] }));
-  const tryLogout = () => { setIsAdmin(false); setEditing(null); setShowSettings(false); };
+  const tryLogout = () => { setIsAdmin(false); localStorage.removeItem("ca-admin"); setEditing(null); setShowSettings(false); };
 
   return (
     <div className="ca-root">
@@ -307,7 +307,7 @@ export default function App() {
       {showPwd && (
         <PasswordModal onClose={() => setShowPwd(false)}
           onSubmit={p => {
-            if (p === config.password) { setIsAdmin(true); setShowPwd(false); }
+            if (p === config.password) { setIsAdmin(true); localStorage.setItem("ca-admin", "true"); setShowPwd(false); }
             else return "That password doesn't match. Try again.";
           }} />
       )}
