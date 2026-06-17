@@ -472,22 +472,14 @@ function EventEditor({ event, saving, onCancel, onSave, onDelete }) {
 }
 
 function DomeMark() {
-  // Dome base aligned with mountain bases at y=42
   return (
-    <svg width="64" height="52" viewBox="0 0 64 52" aria-hidden="true" className="ca-dome">
-      {/* Back mountains (lighter) */}
-      <path d="M0 42 L11 14 L22 42 Z" fill="#3F8466" opacity="0.22" />
-      <path d="M42 42 L53 10 L64 42 Z" fill="#3F8466" opacity="0.22" />
-      {/* Front mountains (darker) */}
-      <path d="M2 42 L13 22 L24 42 Z" fill="#3F8466" opacity="0.38" />
-      <path d="M40 42 L51 18 L62 42 Z" fill="#3F8466" opacity="0.38" />
-      {/* Valley floor */}
-      <line x1="0" y1="42" x2="64" y2="42" stroke="#3F8466" strokeWidth="1" opacity="0.25" />
-      {/* Dome — base at y=42, apex at y=22, half-circle proportions */}
-      <path d="M32 22 C23 22 18 31 18 42 H46 C46 31 41 22 32 22 Z" fill="none" stroke="#1C2E27" strokeWidth="1.8" />
-      <path d="M32 22 V42 M18 42 H46 M20 28 H44 M18 35 H46 M32 22 C28 26 26 33 25 42 M32 22 C36 26 38 33 39 42" fill="none" stroke="#1C2E27" strokeWidth="1" opacity="0.45" />
-      <circle cx="32" cy="42" r="2" fill="#E2922F" />
-    </svg>
+    <img
+      src="/icons/header-icon.png"
+      alt="Casa Alegria"
+      className="ca-dome"
+      width="120"
+      height="51"
+    />
   );
 }
 
@@ -525,7 +517,7 @@ function Style() {
 /* header */
 .ca-header{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:14px}
 .ca-brand{display:flex;align-items:center;gap:12px}
-.ca-dome{color:var(--green);flex:none;overflow:visible}
+.ca-dome{flex:none;height:51px;width:auto;object-fit:contain}
 .ca-fly-btn{overflow:hidden}
 .ca-title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(26px,4.6vw,40px);line-height:.95;margin:0;letter-spacing:-.5px}
 .ca-sub{margin:2px 0 0;color:var(--muted);font-size:13px;font-weight:500;letter-spacing:.2px}
